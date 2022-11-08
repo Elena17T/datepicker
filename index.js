@@ -86,8 +86,6 @@ function listenToClick() {
 
 //rewrite
 function clickHandler(event) {
-  console.log(event);
-  const year = date.getFullYear();
   const pickedDate = new Date(year + "-" + (month + 1) + "-" + (i + 1));
   setDueDate(pickedDate);
   console.log(pickedDate);
