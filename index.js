@@ -1,7 +1,7 @@
 const date = new Date();
 
 const renderCalendar = () => {
-  date.setDate(1);
+  date.setDate(10);
 
   const monthDays = document.querySelector(".days");
 
@@ -87,11 +87,13 @@ function listenToClick() {
 //rewrite
 function clickHandler(event) {
   const year = date.getFullYear();
-  const month = date.getMonth();
-  const pickedDate = getTime(new Date(year + "-" + (month + 1) + "-" + (i + 1)));
+  const monthIndex  =(date.getMonth() + 1);
+  const dayIndex = date.getDate();
+  const pickedDate = getTime(new Date(year + "-" + monthIndex+ "-" + event.target.innerText));
+  console.log(year, monthIndex, dayIndex)
   setDueDate(pickedDate);
-  console.log(pickedDate);
-  document.getElementById("DuedateId").value = setDueDate(pickedDate);
+//   console.log(pickedDate);
+//   document.getElementById("DuedateId").value = pickedDate;
 }
 
 
@@ -137,7 +139,8 @@ function getTime(t) {
   let Y = t.getFullYear();
   let M = addZero(t.getMonth() + 1);
   let D = addZero(t.getDate());
-  // console.log(Y, M, D);
+  
+//   console.log(Y, M, D);
   return `${Y}-${M}-${D}`;
 }
 const curDate = getTime(new Date());
