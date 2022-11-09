@@ -88,9 +88,9 @@ function listenToClick() {
 function clickHandler(event) {
   const year = date.getFullYear();
   const month = date.getMonth();
-  const pickedDate = new Date(year + "-" + (month + 1) + "-" + (i + 1));
+  const pickedDate = getTime(new Date(year + "-" + (month + 1) + "-" + (i + 1)));
   setDueDate(pickedDate);
-//   console.log(pickedDate);
+  console.log(pickedDate);
   document.getElementById("DuedateId").value = setDueDate(pickedDate);
 }
 
