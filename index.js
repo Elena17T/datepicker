@@ -78,7 +78,7 @@ const renderCalendar = () => {
 
 function listenToClick() {
   const elements = document.querySelectorAll(".curDay");
-  for (const el of elements) {
+  for(const el of elements) {
     el.addEventListener("click", clickHandler);
   }
   
@@ -86,10 +86,14 @@ function listenToClick() {
 
 //rewrite
 function clickHandler(event) {
+  const year = date.getFullYear();
+  const month = date.getMonth();
   const pickedDate = new Date(year + "-" + (month + 1) + "-" + (i + 1));
   setDueDate(pickedDate);
-  console.log(pickedDate);
+//   console.log(pickedDate);
+  document.getElementById("DuedateId").value = setDueDate(pickedDate);
 }
+
 
 document.querySelector(".prev").addEventListener("click", () => {
   date.setMonth(date.getMonth() - 1);
@@ -140,5 +144,5 @@ const curDate = getTime(new Date());
 
 setDueDate(curDate);
 function setDueDate(dueDate) {
-  document.getElementById("DuedateId").value = dueDate;
+ document.getElementById("DuedateId").value = dueDate;
 }
