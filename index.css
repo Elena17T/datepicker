@@ -150,6 +150,12 @@ input::placeholder {
     border: .1rem solid #CCDFFF;
     cursor: pointer;
 }
+
+input::-webkit-calendar-picker-indicator{
+    display: none;
+    -webkit-appearance: none;
+}
+
 .prev-date,
 .next-day{
     opacity: 0.5;
